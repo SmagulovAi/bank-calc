@@ -1,15 +1,14 @@
 <?php
+    // if (isset($_GET['checkbox']) && $_GET['checkbox'] == 'yes') {
+    //     echo $_GET['btn'];
+    // } elseif (isset($_GET['checkbox']) && $_GET['checkbox'] == '') {
+    //     echo 'Примите';
+    // }
+
     if (isset($_GET['number1']) && isset($_GET['number2']) && 100000 <= $_GET['number1']) {
         $loanSum = $_GET['number1'] - $_GET['number2'];
     };
-    // if (isset($_GET['number3']) === 1) {
-    //     $pct = "14%";
-    // } elseif (isset($_GET['number3']) === 2) {
-    //     $pct = "21%";
-    // } elseif (isset($_GET['number3']) === 3) {
-    //     $pct = "23%";
-    // };
-
+    
 
     // Срок    
     if (isset($_GET['number3'])) {
@@ -67,17 +66,21 @@
                     </div>
                     <div class="mb-3">
                         <label for="number3" class="form-label">Срок</label>
-                        <input type="number" class="form-control" name="number3" id="number3" value="<?= ($_GET['number3']) ?? '' ?>">
-                    </div>
-                    <div class="input-group-text mb-3">
-                        <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">Согласен с условиями
+                        <input type="number" class="form-control" name="number3" id="number3" value="<?= $_GET['number3'] ?? '' ?>">
                     </div>
 
+                    <!-- Чекбокс -->
+                    <!-- <div class="input-group-text mb-3">
+                        <input class="form-check-input mt-0" type="checkbox" name="checkbox" value="" aria-label="Checkbox for following text input">Согласен с условиями
+                        <input class="form-check-input mt-0" type="checkbox" name="checkbox" value="yes" aria-label="Checkbox for following text input">Согласен с условиями
+                    </div> -->
+                    
 
                     <!-- КНОПКА -->
-                    <div class="mb-3">
-                        <button class="btn btn-primary">Расчитать</button>
-                    </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" name="btn">Расчитать</button>
+                        </div>
+                    
 
 
                     <!-- Промежуточные данные для расчета -->
